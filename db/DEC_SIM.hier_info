@@ -1,0 +1,46 @@
+|DEC_SIM
+L[0] => Mux0.IN69
+L[0] => Mux1.IN69
+L[0] => Mux2.IN69
+L[0] => Mux3.IN69
+L[0] => Mux4.IN69
+L[0] => Mux5.IN69
+L[1] => Mux0.IN68
+L[1] => Mux1.IN68
+L[1] => Mux2.IN68
+L[1] => Mux3.IN68
+L[1] => Mux4.IN68
+L[1] => Mux5.IN68
+L[2] => Mux0.IN67
+L[2] => Mux1.IN67
+L[2] => Mux2.IN67
+L[2] => Mux3.IN67
+L[2] => Mux4.IN67
+L[2] => Mux5.IN67
+L[3] => Mux0.IN66
+L[3] => Mux1.IN66
+L[3] => Mux2.IN66
+L[3] => Mux3.IN66
+L[3] => Mux4.IN66
+L[3] => Mux5.IN66
+L[4] => Mux0.IN65
+L[4] => Mux1.IN65
+L[4] => Mux2.IN65
+L[4] => Mux3.IN65
+L[4] => Mux4.IN65
+L[4] => Mux5.IN65
+L[5] => Mux0.IN64
+L[5] => Mux1.IN64
+L[5] => Mux2.IN64
+L[5] => Mux3.IN64
+L[5] => Mux4.IN64
+L[5] => Mux5.IN64
+D[0] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+D[1] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+D[2] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+D[3] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+D[4] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+D[5] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+D[6] <= <VCC>
+
+

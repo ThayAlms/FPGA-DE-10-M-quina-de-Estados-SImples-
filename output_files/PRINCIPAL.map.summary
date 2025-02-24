@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Thu Oct 10 21:44:48 2024
+Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+Revision Name : PRINCIPAL
+Top-level Entity Name : PRINCIPAL
+Family : MAX 10
+Total logic elements : 302
+    Total combinational functions : 302
+    Dedicated logic registers : 111
+Total registers : 111
+Total pins : 25
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0

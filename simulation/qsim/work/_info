@@ -1,0 +1,54 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Alunos/Guilherme/simulation/qsim
+vPRINCIPAL
+!s110 1728606661
+!i10b 1
+!s100 67_m<oL<9K;[<W_mf@_ja3
+Ime;M;YXYJR>Bg@Q@U^>[Z3
+Z0 VDg1SIo80bB@j0V0VzS_@n1
+Z1 dC:/Users/unieguilholiveira/Downloads/projeto/simulation/qsim
+w1728606660
+8PRINCIPAL.vo
+FPRINCIPAL.vo
+L0 32
+Z2 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1728606661.000000
+!s107 PRINCIPAL.vo|
+!s90 -work|work|PRINCIPAL.vo|
+!i113 1
+Z3 o-work work
+Z4 tCvgOpt 0
+n@p@r@i@n@c@i@p@a@l
+vPRINCIPAL_vlg_vec_tst
+!s110 1728606662
+!i10b 1
+!s100 65KZcXaYn8Ujjd35bkiFQ2
+Ie2Wfa>P0z0ZNmYE<M1NM^2
+R0
+R1
+w1728606658
+8Waveform5.vwf.vt
+FWaveform5.vwf.vt
+L0 30
+R2
+r1
+!s85 0
+31
+!s108 1728606662.000000
+!s107 Waveform5.vwf.vt|
+!s90 -work|work|Waveform5.vwf.vt|
+!i113 1
+R3
+R4
+n@p@r@i@n@c@i@p@a@l_vlg_vec_tst

@@ -1,0 +1,521 @@
+Analysis & Synthesis report for PRINCIPAL
+Thu Oct 10 21:44:48 2024
+Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |PRINCIPAL|ENABLE_2HZ:inst4|E
+  9. State Machine - |PRINCIPAL|FSM:inst|E
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for User Entity Instance: debouncing:inst3|contador_configuravel:cnt
+ 16. Parameter Settings for User Entity Instance: debouncing:inst5|contador_configuravel:cnt
+ 17. Parameter Settings for User Entity Instance: debouncing:inst6|contador_configuravel:cnt
+ 18. Port Connectivity Checks: "debouncing:inst3|contador_configuravel:cnt"
+ 19. Port Connectivity Checks: "debouncing:inst3|latch_sr:ff2"
+ 20. Port Connectivity Checks: "debouncing:inst3|flip_d:ff1"
+ 21. Post-Synthesis Netlist Statistics for Top Partition
+ 22. Elapsed Time Per Partition
+ 23. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2016  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Oct 10 21:44:48 2024       ;
+; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
+; Revision Name                      ; PRINCIPAL                                   ;
+; Top-level Entity Name              ; PRINCIPAL                                   ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 302                                         ;
+;     Total combinational functions  ; 302                                         ;
+;     Dedicated logic registers      ; 111                                         ;
+; Total registers                    ; 111                                         ;
+; Total pins                         ; 25                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; 10M50DAF484C7G     ;                    ;
+; Top-level entity name                                                      ; PRINCIPAL          ; PRINCIPAL          ;
+; Family name                                                                ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; OpenCore Plus hardware evaluation                                          ; Enable             ; Enable             ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                              ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                    ; Library ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------+---------+
+; PRINCIPAL.bdf                    ; yes             ; User Block Diagram/Schematic File  ; C:/Users/unieguilholiveira/Downloads/projeto/PRINCIPAL.bdf      ;         ;
+; dec_hex.vhd                      ; yes             ; Auto-Found VHDL File               ; C:/Users/unieguilholiveira/Downloads/projeto/dec_hex.vhd        ;         ;
+; fsm.vhd                          ; yes             ; Auto-Found VHDL File               ; C:/Users/unieguilholiveira/Downloads/projeto/fsm.vhd            ;         ;
+; enable_2hz.vhd                   ; yes             ; Auto-Found VHDL File               ; C:/Users/unieguilholiveira/Downloads/projeto/enable_2hz.vhd     ;         ;
+; cod_prioridade.vhd               ; yes             ; Auto-Found VHDL File               ; C:/Users/unieguilholiveira/Downloads/projeto/cod_prioridade.vhd ;         ;
+; debouncing.vhd                   ; yes             ; Auto-Found VHDL File               ; C:/Users/unieguilholiveira/Downloads/projeto/debouncing.vhd     ;         ;
+; dec_sim.vhd                      ; yes             ; Auto-Found VHDL File               ; C:/Users/unieguilholiveira/Downloads/projeto/dec_sim.vhd        ;         ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 302       ;
+;                                             ;           ;
+; Total combinational functions               ; 302       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 106       ;
+;     -- 3 input functions                    ; 107       ;
+;     -- <=2 input functions                  ; 89        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 212       ;
+;     -- arithmetic mode                      ; 90        ;
+;                                             ;           ;
+; Total registers                             ; 111       ;
+;     -- Dedicated logic registers            ; 111       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 25        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; CLK~input ;
+; Maximum fan-out                             ; 114       ;
+; Total fan-out                               ; 1298      ;
+; Average fan-out                             ; 2.80      ;
++---------------------------------------------+-----------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                   ;
++-----------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------+-----------------------+--------------+
+; Compilation Hierarchy Node        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                   ; Entity Name           ; Library Name ;
++-----------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------+-----------------------+--------------+
+; |PRINCIPAL                        ; 302 (0)             ; 111 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 25   ; 0            ; 0          ; |PRINCIPAL                                            ; PRINCIPAL             ; work         ;
+;    |Cod_Prioridade:inst1|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRINCIPAL|Cod_Prioridade:inst1                       ; Cod_Prioridade        ; work         ;
+;    |DEC_HEX:inst2|                ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRINCIPAL|DEC_HEX:inst2                              ; DEC_HEX               ; work         ;
+;    |DEC_SIM:inst7|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRINCIPAL|DEC_SIM:inst7                              ; DEC_SIM               ; work         ;
+;    |ENABLE_2HZ:inst4|             ; 61 (61)             ; 27 (27)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRINCIPAL|ENABLE_2HZ:inst4                           ; ENABLE_2HZ            ; work         ;
+;    |FSM:inst|                     ; 16 (16)             ; 6 (6)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRINCIPAL|FSM:inst                                   ; FSM                   ; work         ;
+;    |debouncing:inst3|             ; 72 (0)              ; 26 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRINCIPAL|debouncing:inst3                           ; debouncing            ; work         ;
+;       |contador_configuravel:cnt| ; 69 (69)             ; 25 (25)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRINCIPAL|debouncing:inst3|contador_configuravel:cnt ; contador_configuravel ; work         ;
+;       |flip_d:ff1|                ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRINCIPAL|debouncing:inst3|flip_d:ff1                ; flip_d                ; work         ;
+;       |latch_sr:ff2|              ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRINCIPAL|debouncing:inst3|latch_sr:ff2              ; latch_sr              ; work         ;
+;    |debouncing:inst5|             ; 72 (0)              ; 26 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRINCIPAL|debouncing:inst5                           ; debouncing            ; work         ;
+;       |contador_configuravel:cnt| ; 69 (69)             ; 25 (25)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRINCIPAL|debouncing:inst5|contador_configuravel:cnt ; contador_configuravel ; work         ;
+;       |flip_d:ff1|                ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRINCIPAL|debouncing:inst5|flip_d:ff1                ; flip_d                ; work         ;
+;       |latch_sr:ff2|              ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRINCIPAL|debouncing:inst5|latch_sr:ff2              ; latch_sr              ; work         ;
+;    |debouncing:inst6|             ; 72 (0)              ; 26 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRINCIPAL|debouncing:inst6                           ; debouncing            ; work         ;
+;       |contador_configuravel:cnt| ; 69 (69)             ; 25 (25)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRINCIPAL|debouncing:inst6|contador_configuravel:cnt ; contador_configuravel ; work         ;
+;       |flip_d:ff1|                ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRINCIPAL|debouncing:inst6|flip_d:ff1                ; flip_d                ; work         ;
+;       |latch_sr:ff2|              ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PRINCIPAL|debouncing:inst6|latch_sr:ff2              ; latch_sr              ; work         ;
++-----------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------+-----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------+
+; State Machine - |PRINCIPAL|ENABLE_2HZ:inst4|E ;
++----------+-----+-----+------------------------+
+; Name     ; E.B ; E.A ; E.INICIO               ;
++----------+-----+-----+------------------------+
+; E.INICIO ; 0   ; 0   ; 0                      ;
+; E.A      ; 0   ; 1   ; 1                      ;
+; E.B      ; 1   ; 0   ; 1                      ;
++----------+-----+-----+------------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------+
+; State Machine - |PRINCIPAL|FSM:inst|E          ;
++------+------+------+------+------+------+------+
+; Name ; E.N7 ; E.N4 ; E.N3 ; E.N2 ; E.N1 ; E.N0 ;
++------+------+------+------+------+------+------+
+; E.N0 ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ;
+; E.N1 ; 0    ; 0    ; 0    ; 0    ; 1    ; 1    ;
+; E.N2 ; 0    ; 0    ; 0    ; 1    ; 0    ; 1    ;
+; E.N3 ; 0    ; 0    ; 1    ; 0    ; 0    ; 1    ;
+; E.N4 ; 0    ; 1    ; 0    ; 0    ; 0    ; 1    ;
+; E.N7 ; 1    ; 0    ; 0    ; 0    ; 0    ; 1    ;
++------+------+------+------+------+------+------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                              ;
++----------------------------------------------------+------------------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal                ; Free of Timing Hazards ;
++----------------------------------------------------+------------------------------------+------------------------+
+; debouncing:inst5|latch_sr:ff2|estado               ; debouncing:inst5|latch_sr:ff2|Mux1 ; yes                    ;
+; debouncing:inst6|latch_sr:ff2|estado               ; debouncing:inst6|latch_sr:ff2|Mux1 ; yes                    ;
+; debouncing:inst3|latch_sr:ff2|estado               ; debouncing:inst3|latch_sr:ff2|Mux1 ; yes                    ;
+; Number of user-specified and inferred latches = 3  ;                                    ;                        ;
++----------------------------------------------------+------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-----------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                          ;
++---------------------------------------+-------------------------------------+
+; Register name                         ; Reason for Removal                  ;
++---------------------------------------+-------------------------------------+
+; ENABLE_2HZ:inst4|E.INICIO             ; Lost fanout                         ;
+; ENABLE_2HZ:inst4|E.B                  ; Merged with ENABLE_2HZ:inst4|EN_2HZ ;
+; Total Number of Removed Registers = 2 ;                                     ;
++---------------------------------------+-------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 111   ;
+; Number of registers using Synchronous Clear  ; 6     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 33    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 75    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; debouncing:inst5|flip_d:ff1|q          ; 36      ;
+; debouncing:inst6|flip_d:ff1|q          ; 36      ;
+; debouncing:inst3|flip_d:ff1|q          ; 36      ;
+; Total number of inverted registers = 3 ;         ;
++----------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------+
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |PRINCIPAL|debouncing:inst3|contador_configuravel:cnt|\contador:contagem[16] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |PRINCIPAL|debouncing:inst3|contador_configuravel:cnt|\contador:contagem[11] ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |PRINCIPAL|debouncing:inst5|contador_configuravel:cnt|\contador:contagem[4]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |PRINCIPAL|debouncing:inst5|contador_configuravel:cnt|\contador:contagem[19] ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |PRINCIPAL|debouncing:inst6|contador_configuravel:cnt|\contador:contagem[20] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |PRINCIPAL|debouncing:inst6|contador_configuravel:cnt|\contador:contagem[22] ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |PRINCIPAL|ENABLE_2HZ:inst4|E                                                ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |PRINCIPAL|FSM:inst|E                                                        ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |PRINCIPAL|FSM:inst|E                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debouncing:inst3|contador_configuravel:cnt ;
++----------------+---------+--------------------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                         ;
++----------------+---------+--------------------------------------------------------------+
+; contagem_min   ; 0       ; Signed Integer                                               ;
+; contagem_max   ; 5000000 ; Signed Integer                                               ;
++----------------+---------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debouncing:inst5|contador_configuravel:cnt ;
++----------------+---------+--------------------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                         ;
++----------------+---------+--------------------------------------------------------------+
+; contagem_min   ; 0       ; Signed Integer                                               ;
+; contagem_max   ; 5000000 ; Signed Integer                                               ;
++----------------+---------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debouncing:inst6|contador_configuravel:cnt ;
++----------------+---------+--------------------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                         ;
++----------------+---------+--------------------------------------------------------------+
+; contagem_min   ; 0       ; Signed Integer                                               ;
+; contagem_max   ; 5000000 ; Signed Integer                                               ;
++----------------+---------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "debouncing:inst3|contador_configuravel:cnt"                                                                  ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                  ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; habilita ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; q        ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "debouncing:inst3|latch_sr:ff2"                                                                           ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; nq   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "debouncing:inst3|flip_d:ff1"                                                                             ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; set  ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; rst  ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; nq   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 25                          ;
+; cycloneiii_ff         ; 111                         ;
+;     CLR               ; 27                          ;
+;     ENA               ; 69                          ;
+;     ENA CLR           ; 6                           ;
+;     SCLR              ; 6                           ;
+;     plain             ; 3                           ;
+; cycloneiii_lcell_comb ; 306                         ;
+;     arith             ; 90                          ;
+;         2 data inputs ; 27                          ;
+;         3 data inputs ; 63                          ;
+;     normal            ; 216                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 8                           ;
+;         2 data inputs ; 57                          ;
+;         3 data inputs ; 44                          ;
+;         4 data inputs ; 106                         ;
+;                       ;                             ;
+; Max LUT depth         ; 7.40                        ;
+; Average LUT depth     ; 4.78                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+    Info: Processing started: Thu Oct 10 21:44:33 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PRINCIPAL -c PRINCIPAL
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file principal.bdf
+    Info (12023): Found entity 1: PRINCIPAL
+Info (12127): Elaborating entity "PRINCIPAL" for the top level hierarchy
+Warning (12125): Using design file dec_hex.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: DEC_HEX-SELETOR File: C:/Users/unieguilholiveira/Downloads/projeto/dec_hex.vhd Line: 22
+    Info (12023): Found entity 1: DEC_HEX File: C:/Users/unieguilholiveira/Downloads/projeto/dec_hex.vhd Line: 16
+Info (12128): Elaborating entity "DEC_HEX" for hierarchy "DEC_HEX:inst2"
+Warning (12125): Using design file fsm.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: FSM-BEHAVIOR File: C:/Users/unieguilholiveira/Downloads/projeto/fsm.vhd Line: 22
+    Info (12023): Found entity 1: FSM File: C:/Users/unieguilholiveira/Downloads/projeto/fsm.vhd Line: 16
+Info (12128): Elaborating entity "FSM" for hierarchy "FSM:inst"
+Warning (12125): Using design file enable_2hz.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: ENABLE_2HZ-BEHAVIOR File: C:/Users/unieguilholiveira/Downloads/projeto/enable_2hz.vhd Line: 24
+    Info (12023): Found entity 1: ENABLE_2HZ File: C:/Users/unieguilholiveira/Downloads/projeto/enable_2hz.vhd Line: 19
+Info (12128): Elaborating entity "ENABLE_2HZ" for hierarchy "ENABLE_2HZ:inst4"
+Warning (12125): Using design file cod_prioridade.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: Cod_Prioridade-FLUXO_DE_DADOS File: C:/Users/unieguilholiveira/Downloads/projeto/cod_prioridade.vhd Line: 10
+    Info (12023): Found entity 1: Cod_Prioridade File: C:/Users/unieguilholiveira/Downloads/projeto/cod_prioridade.vhd Line: 4
+Info (12128): Elaborating entity "Cod_Prioridade" for hierarchy "Cod_Prioridade:inst1"
+Warning (12125): Using design file debouncing.vhd, which is not specified as a design file for the current project, but contains definitions for 8 design units and 4 entities in project
+    Info (12022): Found design unit 1: flip_d-comportamental File: C:/Users/unieguilholiveira/Downloads/projeto/debouncing.vhd Line: 27
+    Info (12022): Found design unit 2: latch_sr-comportamental File: C:/Users/unieguilholiveira/Downloads/projeto/debouncing.vhd Line: 51
+    Info (12022): Found design unit 3: contador_configuravel-comportamental File: C:/Users/unieguilholiveira/Downloads/projeto/debouncing.vhd Line: 88
+    Info (12022): Found design unit 4: debouncing-estrutural File: C:/Users/unieguilholiveira/Downloads/projeto/debouncing.vhd Line: 143
+    Info (12023): Found entity 1: flip_d File: C:/Users/unieguilholiveira/Downloads/projeto/debouncing.vhd Line: 18
+    Info (12023): Found entity 2: latch_sr File: C:/Users/unieguilholiveira/Downloads/projeto/debouncing.vhd Line: 43
+    Info (12023): Found entity 3: contador_configuravel File: C:/Users/unieguilholiveira/Downloads/projeto/debouncing.vhd Line: 73
+    Info (12023): Found entity 4: debouncing File: C:/Users/unieguilholiveira/Downloads/projeto/debouncing.vhd Line: 135
+Info (12128): Elaborating entity "debouncing" for hierarchy "debouncing:inst3"
+Info (12128): Elaborating entity "flip_d" for hierarchy "debouncing:inst3|flip_d:ff1" File: C:/Users/unieguilholiveira/Downloads/projeto/debouncing.vhd Line: 161
+Info (12128): Elaborating entity "latch_sr" for hierarchy "debouncing:inst3|latch_sr:ff2" File: C:/Users/unieguilholiveira/Downloads/projeto/debouncing.vhd Line: 162
+Warning (10631): VHDL Process Statement warning at debouncing.vhd(56): inferring latch(es) for signal or variable "estado", which holds its previous value in one or more paths through the process File: C:/Users/unieguilholiveira/Downloads/projeto/debouncing.vhd Line: 56
+Info (10041): Inferred latch for "estado" at debouncing.vhd(56) File: C:/Users/unieguilholiveira/Downloads/projeto/debouncing.vhd Line: 56
+Info (12128): Elaborating entity "contador_configuravel" for hierarchy "debouncing:inst3|contador_configuravel:cnt" File: C:/Users/unieguilholiveira/Downloads/projeto/debouncing.vhd Line: 163
+Warning (12125): Using design file dec_sim.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: DEC_SIM-SELETOR File: C:/Users/unieguilholiveira/Downloads/projeto/dec_sim.vhd Line: 22
+    Info (12023): Found entity 1: DEC_SIM File: C:/Users/unieguilholiveira/Downloads/projeto/dec_sim.vhd Line: 16
+Info (12128): Elaborating entity "DEC_SIM" for hierarchy "DEC_SIM:inst7"
+Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13012): Latch debouncing:inst5|latch_sr:ff2|estado has unsafe behavior File: C:/Users/unieguilholiveira/Downloads/projeto/debouncing.vhd Line: 56
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal debouncing:inst5|contador_configuravel:cnt|\contador:limite_max
+Warning (13012): Latch debouncing:inst6|latch_sr:ff2|estado has unsafe behavior File: C:/Users/unieguilholiveira/Downloads/projeto/debouncing.vhd Line: 56
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal debouncing:inst6|contador_configuravel:cnt|\contador:limite_max
+Warning (13012): Latch debouncing:inst3|latch_sr:ff2|estado has unsafe behavior File: C:/Users/unieguilholiveira/Downloads/projeto/debouncing.vhd Line: 56
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal debouncing:inst3|contador_configuravel:cnt|\contador:limite_max
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "H1[6]" is stuck at VCC
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 328 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 20 output pins
+    Info (21061): Implemented 303 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 17 warnings
+    Info: Peak virtual memory: 4824 megabytes
+    Info: Processing ended: Thu Oct 10 21:44:48 2024
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:14
+
+
